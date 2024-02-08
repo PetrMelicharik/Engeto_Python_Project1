@@ -1,7 +1,7 @@
 # Engeto_Python_Project1
 Textový analyzátor
 """
-projekt_1.py: první projekt do Engeto Online Python Akademie
+projekt_1.py: první projekt do Engeto Online Python Akademie /n
 author: Petr Melichařík
 email: petr.melicharik@seznam.cz
 discord: PetrMelicharik
