@@ -13,6 +13,8 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
     print("password:", heslo)
     print("-" * 30)
     print("Vítej v aplikaci", jmeno)
+    print("Máme zde 3 texty pro analýzu")
+    print("-" * 30)
 else:
     print("username:", jmeno)
     print("password:", heslo)
