@@ -43,7 +43,8 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
     print("Máme zde 3 texty pro analýzu")
     print("-" * 30)
     zvoleny_text = int(input("Zvol číslo textu od 1 do 3:"))
-    print(texty[zvoleny_text - 1])
+    seznam_slov = list(texty[zvoleny_text - 1].split())
+    print(seznam_slov)
 else:
     print("username:", jmeno)
     print("password:", heslo)
