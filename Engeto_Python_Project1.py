@@ -6,6 +6,8 @@ heslo = input("heslo:")
 
 kontrola_hesla = uzivatele.get(jmeno)
 
+seznam_slov = list()
+
 #texty
 texty = ['''
 Situated about 10 miles west of Kemmerer,
@@ -43,7 +45,11 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
     print("Máme zde 3 texty pro analýzu")
     print("-" * 30)
     zvoleny_text = int(input("Zvol číslo textu od 1 do 3:"))
-    seznam_slov = list(texty[zvoleny_text - 1].split())
+    rozdeleni_textu = list(texty[zvoleny_text - 1].split())
+
+    for slovo in rozdeleni_textu:
+        seznam_slov.append(slovo.strip(".").strip(","))
+
     print(seznam_slov)
 else:
     print("username:", jmeno)
