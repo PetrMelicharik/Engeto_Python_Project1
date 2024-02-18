@@ -1,3 +1,11 @@
+#Engeto_Python_Project1
+#Textový analyzátor
+#projekt_1.py: první projekt do Engeto Online Python Akademie
+#author: Petr Melichařík
+#email: petr.melicharik@seznam.cz
+#discord: PetrMelicharik
+
+
 #proměnné
 uzivatele = {"bob": "123", "ann": "pass123", "mike": "password123", "liz": "pass123"}
 
