@@ -14,6 +14,7 @@ slova_velkym = 0
 slova_malym = 0
 pocet_cisel = 0
 cisla = list()
+delky_slov = dict()
 
 #texty
 texty = ['''
@@ -60,6 +61,10 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
 
     for slovo in seznam_slov:
         pocet_slov = pocet_slov +1
+        if len(slovo) not in delky_slov:
+            delky_slov[len(slovo)] = 1
+        else:
+            delky_slov[len(slovo)] = delky_slov[len(slovo)] + 1
         if slovo.istitle() == True:
             slova_s_velkym_pismenem = slova_s_velkym_pismenem + 1
         elif slovo.isupper() == True:
@@ -78,7 +83,7 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
     print("V textu je", pocet_cisel, "čísel")
     print("Součet všech čísel je", sum(cisla))
     print("-" * 30)
-
+    print(delky_slov)
 
 else:
     print("username:", jmeno)
