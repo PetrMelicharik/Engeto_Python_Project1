@@ -68,10 +68,12 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
             slova_malym = slova_malym + 1
         elif slovo.isdigit() == True:
             pocet_cisel = pocet_cisel + 1
-            cisla.append(slovo)
+            cisla.append(int(slovo))
+
 
     print(pocet_slov, slova_s_velkym_pismenem, slova_velkym, slova_malym, pocet_cisel)
-    print(cisla)
+    print(cisla, sum(cisla))
+
 else:
     print("username:", jmeno)
     print("password:", heslo)
