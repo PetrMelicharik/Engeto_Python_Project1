@@ -8,6 +8,13 @@ kontrola_hesla = uzivatele.get(jmeno)
 
 seznam_slov = list()
 
+pocet_slov = 0
+slova_s_velkym_pismenem = 0
+slova_velkym = 0
+slova_malym = 0
+pocet_cisel = 0
+cisla = list()
+
 #texty
 texty = ['''
 Situated about 10 miles west of Kemmerer,
@@ -37,7 +44,7 @@ in modern oceans. Other fish such as paddlefish,
 garpike and stingray are also present.'''
 ]
 
-#přihlášení uživatele
+#přihlášení uživatele a zvolení textu
 
 if jmeno in uzivatele and kontrola_hesla == heslo:
     print("-" * 30)
@@ -47,10 +54,24 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
     zvoleny_text = int(input("Zvol číslo textu od 1 do 3:"))
     rozdeleni_textu = list(texty[zvoleny_text - 1].split())
 
-    for slovo in rozdeleni_textu:
-        seznam_slov.append(slovo.strip(".").strip(","))
+#očištění slov
+    for retezec in rozdeleni_textu:
+        seznam_slov.append(retezec.strip(".").strip(","))
 
-    print(seznam_slov)
+    for slovo in seznam_slov:
+        pocet_slov = pocet_slov +1
+        if slovo.istitle() == True:
+            slova_s_velkym_pismenem = slova_s_velkym_pismenem + 1
+        elif slovo.isupper() == True:
+            slova_velkym = slova_velkym + 1
+        elif slovo.islower() == True:
+            slova_malym = slova_malym + 1
+        elif slovo.isdigit() == True:
+            pocet_cisel = pocet_cisel + 1
+            cisla.append(slovo)
+
+    print(pocet_slov, slova_s_velkym_pismenem, slova_velkym, slova_malym, pocet_cisel)
+    print(cisla)
 else:
     print("username:", jmeno)
     print("password:", heslo)
