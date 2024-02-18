@@ -83,9 +83,13 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
     print("V textu je", pocet_cisel, "čísel")
     print("Součet všech čísel je", sum(cisla))
     print("-" * 30)
+    print("Počet znaků|              Graf               |Počet slov")
     for delka in sorted(delky_slov):
-        print(delka, "*" * delky_slov[delka], delky_slov[delka])
-
+        if delka < 10:
+            print("        ", delka, "|", "*" * delky_slov[delka], " " * (30 - delky_slov[delka]), "|", delky_slov[delka])
+        else:
+            print("       ", delka, "|", "*" * delky_slov[delka], " " * (30 - delky_slov[delka]), "|",
+                  delky_slov[delka])
 else:
     print("username:", jmeno)
     print("password:", heslo)
