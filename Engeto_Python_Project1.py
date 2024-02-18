@@ -48,10 +48,10 @@ garpike and stingray are also present.'''
 #přihlášení uživatele a zvolení textu
 
 if jmeno in uzivatele and kontrola_hesla == heslo:
-    print("-" * 30)
+    print("-" * 50)
     print("Vítej v aplikaci,", jmeno)
     print("Máme zde 3 texty pro analýzu")
-    print("-" * 30)
+    print("-" * 50)
     zvoleny_text = int(input("Zvol číslo textu od 1 do 3:"))
     rozdeleni_textu = list(texty[zvoleny_text - 1].split())
 
@@ -75,14 +75,14 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
             pocet_cisel = pocet_cisel + 1
             cisla.append(int(slovo))
 
-    print("-" * 30)
+    print("-" * 50)
     print("V textu je", pocet_slov, "slov")
     print("V textu je", slova_s_velkym_pismenem, "slov s počátečním velkým písmenem")
     print("V textu je", slova_velkym, "slov, která jsou napsaná velkými písmeny")
     print("V textu je", slova_malym, "slov, která jsou napsaná malými písmeny")
     print("V textu je", pocet_cisel, "čísel")
     print("Součet všech čísel je", sum(cisla))
-    print("-" * 30)
+    print("-" * 50)
     print("Počet znaků|              Graf               |Počet slov")
     for delka in sorted(delky_slov):
         if delka < 10:
