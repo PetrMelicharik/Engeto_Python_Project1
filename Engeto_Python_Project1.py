@@ -70,9 +70,15 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
             pocet_cisel = pocet_cisel + 1
             cisla.append(int(slovo))
 
+    print("-" * 30)
+    print("V textu je", pocet_slov, "slov")
+    print("V textu je", slova_s_velkym_pismenem, "slov s počátečním velkým písmenem")
+    print("V textu je", slova_velkym, "slov, která jsou napsaná velkými písmeny")
+    print("V textu je", slova_malym, "slov, která jsou napsaná malými písmeny")
+    print("V textu je", pocet_cisel, "čísel")
+    print("Součet všech čísel je", sum(cisla))
+    print("-" * 30)
 
-    print(pocet_slov, slova_s_velkym_pismenem, slova_velkym, slova_malym, pocet_cisel)
-    print(cisla, sum(cisla))
 
 else:
     print("username:", jmeno)
