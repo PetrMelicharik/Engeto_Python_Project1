@@ -55,7 +55,7 @@ garpike and stingray are also present.'''
 
 #přihlášení uživatele a zvolení textu
 
-if jmeno in uzivatele and kontrola_hesla == heslo:
+if kontrola_hesla == heslo:
     print("-" * 55)
     print("Vítej v aplikaci,", jmeno)
     print("Máme zde 3 texty pro analýzu")
@@ -68,7 +68,7 @@ if jmeno in uzivatele and kontrola_hesla == heslo:
         seznam_slov.append(retezec.strip(".").strip(","))
 
     for slovo in seznam_slov:
-        pocet_slov = pocet_slov +1
+        pocet_slov = pocet_slov + 1
         if len(slovo) not in delky_slov:
             delky_slov[len(slovo)] = 1
         else:
