@@ -60,44 +60,48 @@ if kontrola_hesla == heslo:
     print("Vítej v aplikaci,", jmeno)
     print("Máme zde 3 texty pro analýzu")
     print("-" * 55)
-    zvoleny_text = int(input("Zvol číslo textu od 1 do 3:"))
-    rozdeleni_textu = list(texty[zvoleny_text - 1].split())
+    zvoleny_text = input("Zvol číslo textu od 1 do 3:")
+
+    if zvoleny_text.isnumeric() and int(zvoleny_text) in range(1, 4):
+        rozdeleni_textu = list(texty[int(zvoleny_text) - 1].split())
 
 #očištění slov
-    for retezec in rozdeleni_textu:
-        seznam_slov.append(retezec.strip(".").strip(","))
+        for retezec in rozdeleni_textu:
+            seznam_slov.append(retezec.strip(".").strip(","))
 
-    for slovo in seznam_slov:
-        pocet_slov = pocet_slov + 1
-        if len(slovo) not in delky_slov:
-            delky_slov[len(slovo)] = 1
-        else:
-            delky_slov[len(slovo)] = delky_slov[len(slovo)] + 1
-        if slovo.istitle() == True:
-            slova_s_velkym_pismenem = slova_s_velkym_pismenem + 1
-        elif slovo.isupper() == True:
-            slova_velkym = slova_velkym + 1
-        elif slovo.islower() == True:
-            slova_malym = slova_malym + 1
-        elif slovo.isdigit() == True:
-            pocet_cisel = pocet_cisel + 1
-            cisla.append(int(slovo))
+        for slovo in seznam_slov:
+            pocet_slov = pocet_slov + 1
+            if len(slovo) not in delky_slov:
+                delky_slov[len(slovo)] = 1
+            else:
+                delky_slov[len(slovo)] = delky_slov[len(slovo)] + 1
+            if slovo.istitle() == True:
+                slova_s_velkym_pismenem = slova_s_velkym_pismenem + 1
+            elif slovo.isupper() == True:
+                slova_velkym = slova_velkym + 1
+            elif slovo.islower() == True:
+                slova_malym = slova_malym + 1
+            elif slovo.isdigit() == True:
+                pocet_cisel = pocet_cisel + 1
+                cisla.append(int(slovo))
 
-    print("-" * 55)
-    print("V textu je", pocet_slov, "slov")
-    print("V textu je", slova_s_velkym_pismenem, "slov s počátečním velkým písmenem")
-    print("V textu je", slova_velkym, "slov, která jsou napsaná velkými písmeny")
-    print("V textu je", slova_malym, "slov, která jsou napsaná malými písmeny")
-    print("V textu je", pocet_cisel, "čísel")
-    print("Součet všech čísel je", sum(cisla))
-    print("-" * 55)
-    print("Počet znaků|              Graf               |Počet slov")
-    for delka in sorted(delky_slov):
-        if delka < 10:
-            print("        ", delka, "|", "*" * delky_slov[delka], " " * (30 - delky_slov[delka]), "|", delky_slov[delka])
-        else:
-            print("       ", delka, "|", "*" * delky_slov[delka], " " * (30 - delky_slov[delka]), "|",
-                  delky_slov[delka])
+        print("-" * 55)
+        print("V textu je", pocet_slov, "slov")
+        print("V textu je", slova_s_velkym_pismenem, "slov s počátečním velkým písmenem")
+        print("V textu je", slova_velkym, "slov, která jsou napsaná velkými písmeny")
+        print("V textu je", slova_malym, "slov, která jsou napsaná malými písmeny")
+        print("V textu je", pocet_cisel, "čísel")
+        print("Součet všech čísel je", sum(cisla))
+        print("-" * 55)
+        print("Počet znaků|              Graf               |Počet slov")
+        for delka in sorted(delky_slov):
+            if delka < 10:
+                print("        ", delka, "|", "*" * delky_slov[delka], " " * (30 - delky_slov[delka]), "|", delky_slov[delka])
+            else:
+                print("       ", delka, "|", "*" * delky_slov[delka], " " * (30 - delky_slov[delka]), "|",
+                    delky_slov[delka])
+    else:
+        print("Neplatný vstup, je třeba zvolit číslo v rozmezí 1 - 3!!! Ukončuji program...")
 else:
     print("username:", jmeno)
     print("password:", heslo)
