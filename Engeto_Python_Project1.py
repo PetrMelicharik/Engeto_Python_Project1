@@ -24,8 +24,6 @@ pocet_cisel = 0
 cisla = list()
 delky_slov = dict()
 
-slova_big = list()
-
 #texty
 texty = ['''
 Situated about 10 miles west of Kemmerer,
@@ -79,7 +77,6 @@ if kontrola_hesla == heslo:
                 delky_slov[len(slovo)] = delky_slov[len(slovo)] + 1
             if slovo.istitle() and slovo.isalpha():
                 slova_s_velkym_pismenem = slova_s_velkym_pismenem + 1
-                slova_big.append(slovo)
             elif slovo.isupper() and slovo.isalpha():
                 slova_velkym = slova_velkym + 1
             elif slovo.islower() and slovo.isalpha():
@@ -88,7 +85,6 @@ if kontrola_hesla == heslo:
                 pocet_cisel = pocet_cisel + 1
                 cisla.append(int(slovo))
 
-        print(slova_big)
         print("-" * 55)
         print("V textu je", pocet_slov, "slov")
         print("V textu je", slova_s_velkym_pismenem, "slov s počátečním velkým písmenem")
